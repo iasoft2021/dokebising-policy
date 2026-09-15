@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>도깨비싱 개인정보처리방침</title>
-<meta name="description" content="도깨비싱 앱이 수집·이용하는 정보와 이용자 권리를 설명하는 개인정보처리방침입니다.">
+<title>도깨비싱 개인정보처리방침 / Privacy Policy</title>
+<meta name="description" content="도깨비싱 앱 개인정보처리방침 (한국어/English) / Privacy Policy for the dokebising app.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -71,6 +71,14 @@
     padding: 64px 24px 96px;
   }
 
+  .top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
   .badge {
     display: inline-flex;
     align-items: center;
@@ -86,6 +94,36 @@
   }
   .badge svg { width: 15px; height: 15px; fill: #fff; }
 
+  .lang-toggle {
+    display: inline-flex;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 999px;
+    padding: 3px;
+    box-shadow: var(--shadow);
+  }
+  .lang-toggle button {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 700;
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+    padding: 7px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease;
+  }
+  .lang-toggle button.active {
+    background: var(--accent);
+    color: #fff;
+  }
+  .lang-toggle button:not(.active):hover {
+    color: var(--text);
+  }
+
   h1 {
     font-family: "Noto Serif KR", serif;
     font-weight: 900;
@@ -95,6 +133,7 @@
     text-wrap: balance;
     letter-spacing: -0.01em;
   }
+  [data-lang-content="en"] h1 { font-family: Georgia, "Noto Serif KR", serif; }
 
   .meta {
     display: flex;
@@ -277,6 +316,8 @@
   footer a { color: var(--accent); text-decoration: none; }
   footer a:hover { text-decoration: underline; }
 
+  [data-lang-content][hidden] { display: none; }
+
   @media (max-width: 560px) {
     .summary { grid-template-columns: 1fr; }
     .page { padding: 44px 18px 72px; }
@@ -286,131 +327,305 @@
 <body>
 <div class="page">
 
-  <span class="badge">
-    <svg viewBox="0 0 24 24"><path d="M12,3v10.55c-0.59,-0.34 -1.27,-0.55 -2,-0.55 -2.21,0 -4,1.79 -4,4s1.79,4 4,4 4,-1.79 4,-4V7h4V3h-6z"/></svg>
-    도깨비싱 dokebising
-  </span>
-
-  <h1>개인정보처리방침</h1>
-  <div class="meta">
-    <span>시행일 2026&#8209;09&#8209;11</span>
-    <span>버전 1.0</span>
-    <span>개발자 아이에이 (IA)</span>
-  </div>
-
-  <p class="lede">
-    아이에이(이하 “개발자”)는 안드로이드 앱 <b>도깨비싱(dokebising)</b>을 운영하면서 이용자의 개인정보를 소중히 다룹니다.
-    이 처리방침은 도깨비싱이 어떤 정보를 언제, 왜 다루는지, 그리고 그 정보가 어디에 머무는지를 실제 앱 동작 그대로 설명합니다.
-  </p>
-
-  <div class="summary">
-    <div class="summary-item">
-      <div class="label">수집하는 정보</div>
-      <div class="value">마이크 음성(녹음 시), 기기 내 음악 파일 목록, 광고 식별자</div>
-    </div>
-    <div class="summary-item">
-      <div class="label">저장 위치</div>
-      <div class="value">기기 안에만 저장 — 개발자가 운영하는 서버는 없습니다</div>
-    </div>
-    <div class="summary-item">
-      <div class="label">제3자 서비스</div>
-      <div class="value">Google AdMob(광고) · Google Play 결제(구독)</div>
-    </div>
-    <div class="summary-item">
-      <div class="label">문의</div>
-      <div class="value"><a href="mailto:ia.soft2021@gmail.com">ia.soft2021@gmail.com</a></div>
+  <div class="top-row">
+    <span class="badge">
+      <svg viewBox="0 0 24 24"><path d="M12,3v10.55c-0.59,-0.34 -1.27,-0.55 -2,-0.55 -2.21,0 -4,1.79 -4,4s1.79,4 4,4 4,-1.79 4,-4V7h4V3h-6z"/></svg>
+      도깨비싱 dokebising
+    </span>
+    <div class="lang-toggle" role="group" aria-label="Language / 언어 선택">
+      <button type="button" data-set-lang="ko">한국어</button>
+      <button type="button" data-set-lang="en">English</button>
     </div>
   </div>
 
-  <section class="doc-section">
-    <div class="sec-head"><span class="sec-num">01</span><h2>이 방침이 적용되는 범위</h2></div>
-    <p>이 처리방침은 도깨비싱 앱(패키지명 <code>com.dokebimaster.dokebising</code>)의 설치·실행·이용 전 과정에 적용됩니다. 도깨비싱은 노래방 반주를 만들고(보컬 분리), 사용자의 노래를 녹음해 원곡과 합쳐 들어보거나 저장할 수 있게 해주는 앱입니다.</p>
-  </section>
+  <!-- ===================== KOREAN ===================== -->
+  <div data-lang-content="ko">
 
-  <section class="doc-section">
-    <div class="sec-head"><span class="sec-num">02</span><h2>수집하는 정보와 수집 방법</h2></div>
-
-    <h3>이용자가 직접 제공하거나 기기 권한으로 접근하는 정보</h3>
-    <ul class="list">
-      <li><span class="tag">RECORD_AUDIO</span><b>마이크 음성</b> — "재생" 화면에서 노래를 부르면 그 목소리를 녹음합니다. 녹음 파일은 기기에만 저장되며, 사용자가 직접 "저장"·"클라우드 저장" 버튼을 눌러 내보내기 전까지 개발자에게 전송되지 않습니다.</li>
-      <li><span class="tag">READ_MEDIA_AUDIO</span><b>기기 내 음악 파일 목록</b> — "모든 노래"·"내 폰에서" 탭에서 반주를 만들 곡을 고를 수 있도록 기기에 있는 음악 파일 목록과 앨범아트를 읽습니다. 곡 파일 자체를 서버로 전송하지 않으며, 보컬 분리는 기기 안(온디바이스 AI 모델)에서 처리됩니다.</li>
-    </ul>
-
-    <h3>서비스 이용 중 자동으로 생기는 정보</h3>
-    <ul class="list">
-      <li><b>광고 식별자 및 기기 정보</b> — 광고를 보여주기 위해 Google AdMob SDK가 자체적으로 수집합니다. 개발자가 직접 수집하거나 보관하지 않으며, Google의 개인정보처리방침을 따릅니다.</li>
-      <li><b>구독 결제 상태</b> — 정기구독은 Google Play 결제 시스템이 전담 처리합니다. 개발자는 카드번호 등 결제수단 정보를 전혀 수집하지 않으며, "구독 중/아님" 상태만 앱이 확인합니다.</li>
-    </ul>
-
-    <div class="card-note">
-      계정 가입이나 로그인 기능이 없으므로, 이름·이메일·전화번호 같은 신원 정보는 애초에 수집하지 않습니다.
+    <h1>개인정보처리방침</h1>
+    <div class="meta">
+      <span>시행일 2026&#8209;09&#8209;11</span>
+      <span>버전 1.0</span>
+      <span>개발자 아이에이 (IA)</span>
     </div>
-  </section>
 
-  <section class="doc-section">
-    <div class="sec-head"><span class="sec-num">03</span><h2>정보를 이용하는 목적</h2></div>
-    <ul class="list">
-      <li>선택한 곡의 보컬/반주 분리 및 재생 — 마이크 음성, 음악 파일 접근</li>
-      <li>부른 노래 녹음, 미리듣기, 저장/공유 파일 생성 — 마이크 음성</li>
-      <li>무료 이용자에게 광고 노출, 구독 결제 처리 — 광고 식별자, 구독 상태</li>
-    </ul>
-  </section>
+    <p class="lede">
+      아이에이(이하 “개발자”)는 안드로이드 앱 <b>도깨비싱(dokebising)</b>을 운영하면서 이용자의 개인정보를 소중히 다룹니다.
+      이 처리방침은 도깨비싱이 어떤 정보를 언제, 왜 다루는지, 그리고 그 정보가 어디에 머무는지를 실제 앱 동작 그대로 설명합니다.
+    </p>
 
-  <section class="doc-section">
-    <div class="sec-head"><span class="sec-num">04</span><h2>정보 보관 및 제3자 제공</h2></div>
-    <p>도깨비싱은 이용자 데이터를 위한 자체 서버를 두고 있지 않습니다. 분리된 반주, 녹음 파일, 프로젝트 목록은 모두 <b>기기 안(앱 전용 저장공간)</b>에만 보관됩니다.</p>
-    <p>"저장" 또는 "클라우드 저장"으로 내보내기를 하면, 이용자가 직접 고른 위치(기기의 다른 폴더, 또는 Google 드라이브 등 이용자 본인의 클라우드 서비스)에 파일이 만들어집니다. 이는 이용자와 해당 서비스 사이의 일이며, 개발자는 그 파일에 접근하거나 수집하지 않습니다.</p>
-    <p>개발자는 이용자의 개인정보를 판매하거나, 법령에 따른 경우를 제외하고 제3자에게 제공하지 않습니다.</p>
-  </section>
+    <div class="summary">
+      <div class="summary-item">
+        <div class="label">수집하는 정보</div>
+        <div class="value">마이크 음성(녹음 시), 기기 내 음악 파일 목록, 광고 식별자</div>
+      </div>
+      <div class="summary-item">
+        <div class="label">저장 위치</div>
+        <div class="value">기기 안에만 저장 — 개발자가 운영하는 서버는 없습니다</div>
+      </div>
+      <div class="summary-item">
+        <div class="label">제3자 서비스</div>
+        <div class="value">Google AdMob(광고) · Google Play 결제(구독)</div>
+      </div>
+      <div class="summary-item">
+        <div class="label">문의</div>
+        <div class="value"><a href="mailto:ia.soft2021@gmail.com">ia.soft2021@gmail.com</a></div>
+      </div>
+    </div>
 
-  <section class="doc-section">
-    <div class="sec-head"><span class="sec-num">05</span><h2>함께 쓰이는 제3자 서비스(SDK)</h2></div>
-    <p class="muted">아래 서비스들은 각자의 개인정보처리방침에 따라 별도로 정보를 처리합니다.</p>
-    <table class="sdk">
-      <tr><th>서비스</th><th>용도</th><th>정책</th></tr>
-      <tr>
-        <td>Google AdMob</td>
-        <td>전면광고·보상형 광고 노출</td>
-        <td><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">policies.google.com/technologies/ads</a></td>
-      </tr>
-      <tr>
-        <td>Google Play 결제</td>
-        <td>정기구독 결제 처리</td>
-        <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
-      </tr>
-    </table>
-  </section>
+    <section class="doc-section">
+      <div class="sec-head"><span class="sec-num">01</span><h2>이 방침이 적용되는 범위</h2></div>
+      <p>이 처리방침은 도깨비싱 앱(패키지명 <code>com.dokebimaster.dokebising</code>)의 설치·실행·이용 전 과정에 적용됩니다. 도깨비싱은 노래방 반주를 만들고(보컬 분리), 사용자의 노래를 녹음해 원곡과 합쳐 들어보거나 저장할 수 있게 해주는 앱입니다.</p>
+    </section>
 
-  <section class="doc-section">
-    <div class="sec-head"><span class="sec-num">06</span><h2>권한 관리와 데이터 삭제</h2></div>
-    <ul class="list">
-      <li>마이크·음악 파일 접근 권한은 기기의 <b>설정 &gt; 앱 &gt; 도깨비싱 &gt; 권한</b>에서 언제든 껐다 켤 수 있습니다. 권한을 끄면 녹음이나 곡 선택 같은 관련 기능이 제한됩니다.</li>
-      <li>"최근"·"녹음목록" 탭에서 항목을 삭제하면 해당 프로젝트/녹음 파일이 기기에서 즉시 지워집니다.</li>
-      <li>앱을 삭제(제거)하면 기기에 저장돼 있던 모든 반주·녹음·프로젝트 데이터가 함께 삭제됩니다.</li>
-    </ul>
-  </section>
+    <section class="doc-section">
+      <div class="sec-head"><span class="sec-num">02</span><h2>수집하는 정보와 수집 방법</h2></div>
 
-  <section class="doc-section">
-    <div class="sec-head"><span class="sec-num">07</span><h2>아동의 개인정보</h2></div>
-    <p>도깨비싱은 만 14세 미만 아동을 주 대상으로 만든 서비스가 아니며, 아동의 개인정보를 의도적으로 수집하지 않습니다. 아동이 보호자 동의 없이 개인정보를 제공한 사실을 알게 되면 지체 없이 삭제 조치합니다.</p>
-  </section>
+      <h3>이용자가 직접 제공하거나 기기 권한으로 접근하는 정보</h3>
+      <ul class="list">
+        <li><span class="tag">RECORD_AUDIO</span><b>마이크 음성</b> — "재생" 화면에서 노래를 부르면 그 목소리를 녹음합니다. 녹음 파일은 기기에만 저장되며, 사용자가 직접 "저장"·"클라우드 저장" 버튼을 눌러 내보내기 전까지 개발자에게 전송되지 않습니다.</li>
+        <li><span class="tag">READ_MEDIA_AUDIO</span><b>기기 내 음악 파일 목록</b> — "모든 노래"·"내 폰에서" 탭에서 반주를 만들 곡을 고를 수 있도록 기기에 있는 음악 파일 목록과 앨범아트를 읽습니다. 곡 파일 자체를 서버로 전송하지 않으며, 보컬 분리는 기기 안(온디바이스 AI 모델)에서 처리됩니다.</li>
+      </ul>
 
-  <section class="doc-section">
-    <div class="sec-head"><span class="sec-num">08</span><h2>처리방침의 변경</h2></div>
-    <p>법령이나 서비스 내용이 바뀌면 이 처리방침의 내용이 추가·삭제·수정될 수 있습니다. 내용이 바뀌면 이 페이지의 시행일과 버전을 갱신해 안내합니다.</p>
-  </section>
+      <h3>서비스 이용 중 자동으로 생기는 정보</h3>
+      <ul class="list">
+        <li><b>광고 식별자 및 기기 정보</b> — 광고를 보여주기 위해 Google AdMob SDK가 자체적으로 수집합니다. 개발자가 직접 수집하거나 보관하지 않으며, Google의 개인정보처리방침을 따릅니다.</li>
+        <li><b>구독 결제 상태</b> — 정기구독은 Google Play 결제 시스템이 전담 처리합니다. 개발자는 카드번호 등 결제수단 정보를 전혀 수집하지 않으며, "구독 중/아님" 상태만 앱이 확인합니다.</li>
+      </ul>
 
-  <section class="doc-section">
-    <div class="sec-head"><span class="sec-num">09</span><h2>문의처</h2></div>
-    <p>개인정보 처리에 관해 궁금한 점이 있으면 아래로 연락해 주세요.</p>
-    <p><b>아이에이 (IA)</b><br>이메일: <a href="mailto:ia.soft2021@gmail.com" style="color:var(--accent);text-decoration:none;">ia.soft2021@gmail.com</a></p>
-  </section>
+      <div class="card-note">
+        계정 가입이나 로그인 기능이 없으므로, 이름·이메일·전화번호 같은 신원 정보는 애초에 수집하지 않습니다.
+      </div>
+    </section>
 
-  <footer>
-    <span>© 아이에이 (IA) · 도깨비싱</span>
-    <span>최종 수정일 2026-09-11</span>
-  </footer>
+    <section class="doc-section">
+      <div class="sec-head"><span class="sec-num">03</span><h2>정보를 이용하는 목적</h2></div>
+      <ul class="list">
+        <li>선택한 곡의 보컬/반주 분리 및 재생 — 마이크 음성, 음악 파일 접근</li>
+        <li>부른 노래 녹음, 미리듣기, 저장/공유 파일 생성 — 마이크 음성</li>
+        <li>무료 이용자에게 광고 노출, 구독 결제 처리 — 광고 식별자, 구독 상태</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-head"><span class="sec-num">04</span><h2>정보 보관 및 제3자 제공</h2></div>
+      <p>도깨비싱은 이용자 데이터를 위한 자체 서버를 두고 있지 않습니다. 분리된 반주, 녹음 파일, 프로젝트 목록은 모두 <b>기기 안(앱 전용 저장공간)</b>에만 보관됩니다.</p>
+      <p>"저장" 또는 "클라우드 저장"으로 내보내기를 하면, 이용자가 직접 고른 위치(기기의 다른 폴더, 또는 Google 드라이브 등 이용자 본인의 클라우드 서비스)에 파일이 만들어집니다. 이는 이용자와 해당 서비스 사이의 일이며, 개발자는 그 파일에 접근하거나 수집하지 않습니다.</p>
+      <p>개발자는 이용자의 개인정보를 판매하거나, 법령에 따른 경우를 제외하고 제3자에게 제공하지 않습니다.</p>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-head"><span class="sec-num">05</span><h2>함께 쓰이는 제3자 서비스(SDK)</h2></div>
+      <p class="muted">아래 서비스들은 각자의 개인정보처리방침에 따라 별도로 정보를 처리합니다.</p>
+      <table class="sdk">
+        <tr><th>서비스</th><th>용도</th><th>정책</th></tr>
+        <tr>
+          <td>Google AdMob</td>
+          <td>전면광고·보상형 광고 노출</td>
+          <td><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">policies.google.com/technologies/ads</a></td>
+        </tr>
+        <tr>
+          <td>Google Play 결제</td>
+          <td>정기구독 결제 처리</td>
+          <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-head"><span class="sec-num">06</span><h2>권한 관리와 데이터 삭제</h2></div>
+      <ul class="list">
+        <li>마이크·음악 파일 접근 권한은 기기의 <b>설정 &gt; 앱 &gt; 도깨비싱 &gt; 권한</b>에서 언제든 껐다 켤 수 있습니다. 권한을 끄면 녹음이나 곡 선택 같은 관련 기능이 제한됩니다.</li>
+        <li>"최근"·"녹음목록" 탭에서 항목을 삭제하면 해당 프로젝트/녹음 파일이 기기에서 즉시 지워집니다.</li>
+        <li>앱을 삭제(제거)하면 기기에 저장돼 있던 모든 반주·녹음·프로젝트 데이터가 함께 삭제됩니다.</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-head"><span class="sec-num">07</span><h2>아동의 개인정보</h2></div>
+      <p>도깨비싱은 만 14세 미만 아동을 주 대상으로 만든 서비스가 아니며, 아동의 개인정보를 의도적으로 수집하지 않습니다. 아동이 보호자 동의 없이 개인정보를 제공한 사실을 알게 되면 지체 없이 삭제 조치합니다.</p>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-head"><span class="sec-num">08</span><h2>처리방침의 변경</h2></div>
+      <p>법령이나 서비스 내용이 바뀌면 이 처리방침의 내용이 추가·삭제·수정될 수 있습니다. 내용이 바뀌면 이 페이지의 시행일과 버전을 갱신해 안내합니다.</p>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-head"><span class="sec-num">09</span><h2>문의처</h2></div>
+      <p>개인정보 처리에 관해 궁금한 점이 있으면 아래로 연락해 주세요.</p>
+      <p><b>아이에이 (IA)</b><br>이메일: <a href="mailto:ia.soft2021@gmail.com" style="color:var(--accent);text-decoration:none;">ia.soft2021@gmail.com</a></p>
+    </section>
+
+    <footer>
+      <span>© 아이에이 (IA) · 도깨비싱</span>
+      <span>최종 수정일 2026-09-11</span>
+    </footer>
+
+  </div>
+
+  <!-- ===================== ENGLISH ===================== -->
+  <div data-lang-content="en" hidden>
+
+    <h1>Privacy Policy</h1>
+    <div class="meta">
+      <span>Effective 2026&#8209;09&#8209;11</span>
+      <span>Version 1.0</span>
+      <span>Developer IA (아이에이)</span>
+    </div>
+
+    <p class="lede">
+      IA ("we", "the developer") operates the Android app <b>dokebising (도깨비싱)</b> and takes the privacy of our
+      users seriously. This policy describes exactly what data dokebising handles, when, why, and where that
+      data actually lives — matching the app's real behavior.
+    </p>
+
+    <div class="summary">
+      <div class="summary-item">
+        <div class="label">Data collected</div>
+        <div class="value">Microphone audio (when recording), on-device music file listing, advertising ID</div>
+      </div>
+      <div class="summary-item">
+        <div class="label">Where it's stored</div>
+        <div class="value">On-device only — the developer runs no backend server</div>
+      </div>
+      <div class="summary-item">
+        <div class="label">Third-party services</div>
+        <div class="value">Google AdMob (ads) · Google Play Billing (subscriptions)</div>
+      </div>
+      <div class="summary-item">
+        <div class="label">Contact</div>
+        <div class="value"><a href="mailto:ia.soft2021@gmail.com">ia.soft2021@gmail.com</a></div>
+      </div>
+    </div>
+
+    <section class="doc-section">
+      <div class="sec-head"><span class="sec-num">01</span><h2>Scope</h2></div>
+      <p>This policy applies to the installation, execution, and use of the dokebising app (package name <code>com.dokebimaster.dokebising</code>). dokebising creates karaoke-style instrumentals by separating vocals from a song, and lets you record your own singing to preview alongside, or save together with, the original track.</p>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-head"><span class="sec-num">02</span><h2>Information we collect and how</h2></div>
+
+      <h3>Information you provide, or the app accesses via device permissions</h3>
+      <ul class="list">
+        <li><span class="tag">RECORD_AUDIO</span><b>Microphone audio</b> — while you sing along on the Play screen, the app records your voice. The recording stays on your device and is never sent to the developer unless you explicitly tap "Save" or "Save to cloud" to export it.</li>
+        <li><span class="tag">READ_MEDIA_AUDIO</span><b>On-device music file listing</b> — the "All Songs" and "My Phone" tabs read the music files and album art already on your device so you can pick a song to turn into an instrumental. Song files themselves are never uploaded — vocal separation runs entirely on-device using a local AI model.</li>
+      </ul>
+
+      <h3>Information generated automatically while using the service</h3>
+      <ul class="list">
+        <li><b>Advertising ID and device information</b> — collected directly by the Google AdMob SDK to serve ads. The developer does not separately collect or store this data; it is governed by Google's own privacy policy.</li>
+        <li><b>Subscription status</b> — subscriptions are handled entirely by Google Play Billing. The developer never collects payment details (card numbers, etc.) and only checks whether a "subscribed / not subscribed" state applies.</li>
+      </ul>
+
+      <div class="card-note">
+        The app has no account creation or sign-in, so identifying information such as name, email, or phone number is never collected in the first place.
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-head"><span class="sec-num">03</span><h2>How we use this information</h2></div>
+      <ul class="list">
+        <li>Separating and playing back the vocal/instrumental of a chosen song — microphone audio, music file access</li>
+        <li>Recording your singing, previewing it, and generating save/share files — microphone audio</li>
+        <li>Showing ads to free users and processing subscription billing — advertising ID, subscription status</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-head"><span class="sec-num">04</span><h2>Data storage and third-party sharing</h2></div>
+      <p>dokebising does not operate a backend server for user data. Separated instrumentals, recordings, and your project list are all stored <b>only on your device</b>, in the app's own storage area.</p>
+      <p>When you export using "Save" or "Save to cloud", a file is created at the location you choose — another folder on your device, or your own cloud service such as Google Drive. That transfer happens directly between you and that service; the developer never accesses or collects that file.</p>
+      <p>The developer does not sell your personal information, and does not share it with third parties except where required by law.</p>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-head"><span class="sec-num">05</span><h2>Third-party services (SDKs) in use</h2></div>
+      <p class="muted">Each service below processes data separately, under its own privacy policy.</p>
+      <table class="sdk">
+        <tr><th>Service</th><th>Purpose</th><th>Policy</th></tr>
+        <tr>
+          <td>Google AdMob</td>
+          <td>Interstitial and rewarded ad delivery</td>
+          <td><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">policies.google.com/technologies/ads</a></td>
+        </tr>
+        <tr>
+          <td>Google Play Billing</td>
+          <td>Subscription payment processing</td>
+          <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-head"><span class="sec-num">06</span><h2>Managing permissions and deleting data</h2></div>
+      <ul class="list">
+        <li>Microphone and music-file permissions can be turned on or off at any time under <b>Settings &gt; Apps &gt; dokebising &gt; Permissions</b> on your device. Turning a permission off limits the related feature (recording, or picking a song).</li>
+        <li>Deleting an item from the "Recent" or "Recordings" tab immediately removes that project or recording file from your device.</li>
+        <li>Uninstalling the app deletes all instrumentals, recordings, and project data stored on your device.</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-head"><span class="sec-num">07</span><h2>Children's privacy</h2></div>
+      <p>dokebising is not directed at children under the age of 13 and does not knowingly collect personal information from children. If we become aware that a child has provided personal information without parental consent, we will delete it promptly.</p>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-head"><span class="sec-num">08</span><h2>Changes to this policy</h2></div>
+      <p>This policy may be updated to reflect changes in law or in the service itself. When it changes, the effective date and version shown on this page will be updated accordingly.</p>
+    </section>
+
+    <section class="doc-section">
+      <div class="sec-head"><span class="sec-num">09</span><h2>Contact</h2></div>
+      <p>If you have any questions about how your information is handled, please reach out:</p>
+      <p><b>IA (아이에이)</b><br>Email: <a href="mailto:ia.soft2021@gmail.com" style="color:var(--accent);text-decoration:none;">ia.soft2021@gmail.com</a></p>
+    </section>
+
+    <footer>
+      <span>© IA (아이에이) · dokebising</span>
+      <span>Last updated 2026-09-11</span>
+    </footer>
+
+  </div>
 
 </div>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('[data-set-lang]');
+    var blocks = document.querySelectorAll('[data-lang-content]');
+    var STORAGE_KEY = 'dokebising-policy-lang';
+
+    function applyLang(lang) {
+      blocks.forEach(function (block) {
+        block.hidden = block.getAttribute('data-lang-content') !== lang;
+      });
+      buttons.forEach(function (btn) {
+        btn.classList.toggle('active', btn.getAttribute('data-set-lang') === lang);
+      });
+      document.documentElement.setAttribute('lang', lang);
+      try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+    }
+
+    function detectDefaultLang() {
+      try {
+        var saved = localStorage.getItem(STORAGE_KEY);
+        if (saved === 'ko' || saved === 'en') return saved;
+      } catch (e) {}
+      var nav = (navigator.language || navigator.userLanguage || 'ko').toLowerCase();
+      return nav.indexOf('ko') === 0 ? 'ko' : 'en';
+    }
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        applyLang(btn.getAttribute('data-set-lang'));
+      });
+    });
+
+    applyLang(detectDefaultLang());
+  })();
+</script>
+
 </body>
 </html>
